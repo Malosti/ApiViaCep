@@ -18,7 +18,7 @@ namespace ConsumindoApiViaCep.Controller
             Regex cepValido = new Regex("^[0-9]{8}$", RegexOptions.None);
 
 
-            if (!cepValido.IsMatch(cep))
+            if (cep != null && !cepValido.IsMatch(cep))
             {
                 EnderecoView.TelaCPFInvalido();
                 goto inicio;
@@ -28,7 +28,8 @@ namespace ConsumindoApiViaCep.Controller
 
             if (enderecoLocalizado.erro == true)
             {
-                Console.WriteLine("CEP não localizado");
+                EnderecoView.TelaCPFNaoLocalizado();
+                goto inicio;
             }
             else if (enderecoLocalizado.erro == false)
             {

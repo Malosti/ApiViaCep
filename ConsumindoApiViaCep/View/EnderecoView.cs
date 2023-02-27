@@ -28,5 +28,12 @@ namespace ConsumindoApiViaCep.View
             Console.ReadKey();
             Console.Clear();
         }
+
+        public static void TelaCPFNaoLocalizado()
+        {
+            Console.WriteLine("CEP não encontrado... digite alguma tecla para tentar novamente");
+            Console.ReadKey();
+            Console.Clear();
+        }
     }
 }
