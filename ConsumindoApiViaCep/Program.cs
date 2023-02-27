@@ -1,6 +1,7 @@
 ﻿using ConsumindoApiViaCep.Entities;
 using ConsumindoApiViaCep.Services;
 using ConsumindoApiViaCep.View;
+using System.Text.RegularExpressions;
 
 inicio:
 
@@ -9,9 +10,10 @@ var enderecoService = new EnderecoService();
 
 telasInteracao.TelaInicial();
 var cep = Console.ReadLine();
+Regex cepValido = new Regex("^[0-9]{8}$", RegexOptions.None);
 
 
-if (cep == null || cep.Length > 8 || cep.Contains(" "))
+if (!cepValido.IsMatch(cep))
 {
     telasInteracao.TelaCPFInvalido();
     goto inicio;
