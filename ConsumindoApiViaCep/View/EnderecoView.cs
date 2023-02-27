@@ -26,5 +26,12 @@ namespace ConsumindoApiViaCep.View
             Console.WriteLine($" UF: {enderecoLocalizado.uf}");
             Console.WriteLine($" Código IBGE: {enderecoLocalizado.ibge}");
         }
+
+        public void TelaCPFInvalido()
+        {
+            Console.WriteLine("CEP inválido... digite alguma tecla para tentar novamente");
+            Console.ReadKey();
+            Console.Clear();
+        }
     }
 }

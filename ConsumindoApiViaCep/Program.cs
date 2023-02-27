@@ -13,8 +13,7 @@ var cep = Console.ReadLine();
 
 if (cep == null || cep.Length > 8 || cep.Contains(" "))
 {
-    Console.WriteLine("CEP inválido... digite alguma tecla para tentar novamente");
-    Console.ReadKey();
+    telasInteracao.TelaCPFInvalido();
     goto inicio;
 }
 
