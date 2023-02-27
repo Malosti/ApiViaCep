@@ -5,17 +5,16 @@ using System.Text.RegularExpressions;
 
 inicio:
 
-var telasInteracao = new EnderecoView();
 var enderecoService = new EnderecoService();
 
-telasInteracao.TelaInicial();
+EnderecoView.TelaInicial();
 var cep = Console.ReadLine();
 Regex cepValido = new Regex("^[0-9]{8}$", RegexOptions.None);
 
 
 if (!cepValido.IsMatch(cep))
 {
-    telasInteracao.TelaCPFInvalido();
+    EnderecoView.TelaCPFInvalido();
     goto inicio;
 }
 
@@ -27,7 +26,7 @@ if (enderecoLocalizado.erro == true)
 }
 else if (enderecoLocalizado.erro == false)
 {
-    telasInteracao.TelaEndereco(enderecoLocalizado);
+    EnderecoView.TelaEndereco(enderecoLocalizado);
 }
 
 

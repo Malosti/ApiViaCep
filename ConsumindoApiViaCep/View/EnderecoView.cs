@@ -4,13 +4,13 @@ namespace ConsumindoApiViaCep.View
 {
     internal class EnderecoView
     {
-        public void TelaInicial()
+        public static void TelaInicial()
         {
             Console.WriteLine(" ===== Bem vindo ao ViaCEP ===== ");
             Console.Write(" Informe o CEP: ");
         }
 
-        public void TelaEndereco(Endereco enderecoLocalizado)
+        public static void TelaEndereco(Endereco enderecoLocalizado)
         {
             Console.Clear();
             Console.WriteLine(" ===== Seu endereço ===== ");
@@ -22,7 +22,7 @@ namespace ConsumindoApiViaCep.View
             Console.WriteLine($" Código IBGE: {enderecoLocalizado.ibge}");
         }
 
-        public void TelaCPFInvalido()
+        public static void TelaCPFInvalido()
         {
             Console.WriteLine("CEP inválido... digite alguma tecla para tentar novamente");
             Console.ReadKey();
