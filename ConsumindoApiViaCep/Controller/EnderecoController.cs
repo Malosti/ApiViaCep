@@ -12,7 +12,9 @@ namespace ConsumindoApiViaCep.Controller
         inicio:
 
             var enderecoService = new EnderecoService();
+            var opcao = "S";
 
+            while (opcao != "N") { 
             EnderecoView.TelaInicial();
             var cep = Console.ReadLine();
             Regex cepValido = new Regex("^[0-9]{8}$", RegexOptions.None);
@@ -34,6 +36,12 @@ namespace ConsumindoApiViaCep.Controller
             else if (enderecoLocalizado.erro == false)
             {
                 EnderecoView.TelaEndereco(enderecoLocalizado);
+            }
+
+                Console.WriteLine();
+                Console.Write("Deseja pesquisar novamente? S/N ");
+                opcao = Console.ReadLine().ToUpper();
+                Console.Clear();
             }
         }
     }
